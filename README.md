@@ -1,8 +1,10 @@
-# Netlib.re 多账号登录保活脚本
+# Netlib.re 单/多账号登录保活脚本
 
 ## 项目简介
 
 本项目用于自动登录 [Netlib.re](https://www.netlib.re/) 网站，实现账号保活。适用于需要每隔一段时间（如 30 天）登录一次的网站场景。支持多账号循环登录、登录失败判定、延迟和网页加载等待，防止被风控。支持 GitHub Actions 自动运行（无头模式），成功登录后停留 5 秒，用于保活或刷新 Cookie。仅用于登录保活，不涉及敏感操作。
+
+   * 写多账号表示支持多账号，不代表不支持单个账号，问的我一脸懵，单账号也能用!
 
 ## 功能说明
 
@@ -39,6 +41,17 @@
 
    * 在仓库 `Settings` → `Secrets and variables` → `Actions` → `New repository secret` 中为每个账号添加用户名和密码，例如：
    * 格式如下（每个账号用 `;` 分隔，每个账号用户名和密码用 `,` 分隔）：、
+
+***单个账号示例：***
+
+`Name` 填入 `SITE_ACCOUNTS`
+
+`Secret` 填入
+```
+user,password
+```
+
+***多账号示例：***
 
 `Name` 填入 `SITE_ACCOUNTS`
 
