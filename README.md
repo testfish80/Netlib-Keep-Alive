@@ -101,6 +101,10 @@ python -m playwright install chromium
 6. **本地运行**
 
 ```bash
+# Ubuntu Server
+sudo apt install xvfb
+Xvfb :1 -screen 0 1280x720x24 &
+export DISPLAY=:1
 # Linux/macOS
 eport SITE_ACCOUNTS="user1,password1;user2,password2"
 # Windows PowerShell
